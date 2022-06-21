@@ -1,0 +1,153 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  CreativePatchingLoader (CreativeCore_v1.10.64_mc1.12.2.jar)
+  LittlePatchingLoader (LittleTiles_v1.5.57_mc1.12.2.jar)
+Contact their authors BEFORE contacting forge
+
+// Hey, that tickles! Hehehe!
+
+Time: 6/19/22 2:30 PM
+Description: Unexpected error
+
+java.lang.NoClassDefFoundError: com/creativemd/littletiles/common/world/LittleNeighborUpdateCollector
+	at com.creativemd.littletiles.common.util.place.Placement.placeTiles(Placement.java:217)
+	at com.creativemd.littletiles.common.util.place.Placement.place(Placement.java:192)
+	at com.creativemd.littletiles.common.action.block.LittleActionPlaceStack.placeTile(LittleActionPlaceStack.java:148)
+	at com.creativemd.littletiles.common.action.block.LittleActionPlaceStack.action(LittleActionPlaceStack.java:100)
+	at com.creativemd.littletiles.common.action.LittleAction.execute(LittleAction.java:263)
+	at com.creativemd.littletiles.common.event.LittleEventHandler.onRightInteractClient(LittleEventHandler.java:276)
+	at com.creativemd.littletiles.common.event.LittleEventHandler.onInteract(LittleEventHandler.java:221)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_33_LittleEventHandler_onInteract_RightClickBlock.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:182)
+	at net.minecraftforge.common.ForgeHooks.onRightClickBlock(ForgeHooks.java:1137)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.func_187099_a(PlayerControllerMP.java:398)
+	at net.minecraft.client.Minecraft.func_147121_ag(Minecraft.java:1579)
+	at net.minecraft.client.Minecraft.func_184117_aA(Minecraft.java:2254)
+	at net.minecraft.client.Minecraft.func_184118_az(Minecraft.java:2020)
+	at net.minecraft.client.Minecraft.func_71407_l(Minecraft.java:1808)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:1098)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:398)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+Caused by: java.lang.ClassNotFoundException: com.creativemd.littletiles.common.world.LittleNeighborUpdateCollector
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:191)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 25 more
+Caused by: java.lang.NoClassDefFoundError: com/creativemd/creativecore/common/world/NeighborUpdateCollector
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:760)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:182)
+	... 27 more
+Caused by: java.lang.ClassNotFoundException: com.creativemd.creativecore.common.world.NeighborUpdateCollector
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:101)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 31 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at com.creativemd.littletiles.common.util.place.Placement.placeTiles(Placement.java:217)
+	at com.creativemd.littletiles.common.util.place.Placement.place(Placement.java:192)
+	at com.creativemd.littletiles.common.action.block.LittleActionPlaceStack.placeTile(LittleActionPlaceStack.java:148)
+	at com.creativemd.littletiles.common.action.block.LittleActionPlaceStack.action(LittleActionPlaceStack.java:100)
+	at com.creativemd.littletiles.common.action.LittleAction.execute(LittleAction.java:263)
+	at com.creativemd.littletiles.common.event.LittleEventHandler.onRightInteractClient(LittleEventHandler.java:276)
+	at com.creativemd.littletiles.common.event.LittleEventHandler.onInteract(LittleEventHandler.java:221)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_33_LittleEventHandler_onInteract_RightClickBlock.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:182)
+	at net.minecraftforge.common.ForgeHooks.onRightClickBlock(ForgeHooks.java:1137)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.func_187099_a(PlayerControllerMP.java:398)
+	at net.minecraft.client.Minecraft.func_147121_ag(Minecraft.java:1579)
+	at net.minecraft.client.Minecraft.func_184117_aA(Minecraft.java:2254)
+	at net.minecraft.client.Minecraft.func_184118_az(Minecraft.java:2020)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['YT_Meteor'/1629, l='MpServer', x=26.46, y=68.00, z=74.57]]
+	Chunk stats: MultiplayerChunkCache: 289, 289
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (16,69,80), Chunk: (at 0,4,0 in 1,5; contains blocks 16,0,80 to 31,255,95), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 5276 game time, 5276 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 33 total; [EntityBat['Bat'/13065, l='MpServer', x=106.56, y=17.61, z=81.05], EntitySheep['Sheep'/39, l='MpServer', x=-35.50, y=64.00, z=127.50], EntitySheep['Sheep'/40, l='MpServer', x=-37.50, y=64.00, z=126.50], EntitySheep['Sheep'/41, l='MpServer', x=-33.50, y=64.00, z=126.50], EntitySheep['Sheep'/42, l='MpServer', x=-35.50, y=64.00, z=129.50], EntityChicken['Chicken'/55, l='MpServer', x=-14.50, y=65.00, z=49.50], EntityChicken['Chicken'/56, l='MpServer', x=-18.19, y=64.00, z=40.52], EntityChicken['Chicken'/57, l='MpServer', x=-11.58, y=66.00, z=48.50], EntityChicken['Chicken'/58, l='MpServer', x=-17.50, y=64.00, z=47.50], EntitySheep['Sheep'/59, l='MpServer', x=30.37, y=64.00, z=103.16], EntitySheep['Sheep'/60, l='MpServer', x=14.42, y=64.00, z=89.23], EntitySheep['Sheep'/61, l='MpServer', x=40.24, y=64.00, z=108.62], EntitySheep['Sheep'/62, l='MpServer', x=18.32, y=64.00, z=108.53], EntityBat['Bat'/12094, l='MpServer', x=98.60, y=13.81, z=45.21], EntitySheep['Sheep'/63, l='MpServer', x=47.50, y=70.00, z=125.50], EntitySheep['Sheep'/64, l='MpServer', x=50.50, y=72.00, z=125.50], EntitySheep['Sheep'/65, l='MpServer', x=49.50, y=69.00, z=123.50], EntitySheep['Sheep'/66, l='MpServer', x=49.50, y=72.00, z=125.50], EntitySheep['Sheep'/76, l='MpServer', x=67.56, y=69.00, z=26.51], EntitySheep['Sheep'/77, l='MpServer', x=59.52, y=67.00, z=28.55], EntitySheep['Sheep'/78, l='MpServer', x=65.86, y=68.00, z=29.00], EntitySheep['Sheep'/79, l='MpServer', x=63.74, y=69.00, z=26.54], EntityBat['Bat'/20832, l='MpServer', x=-37.25, y=58.23, z=19.75], EntityBat['Bat'/20834, l='MpServer', x=21.68, y=36.28, z=141.15], EntityBat['Bat'/20835, l='MpServer', x=22.26, y=33.03, z=147.19], EntityBat['Bat'/20836, l='MpServer', x=23.85, y=34.08, z=143.50], EntityPlayerSP['YT_Meteor'/1629, l='MpServer', x=26.46, y=68.00, z=74.57], EntityFallingBlock['Falling Block'/1486, l='MpServer', x=135.50, y=26.49, z=126.50], EntityBat['Bat'/28368, l='MpServer', x=100.57, y=21.69, z=88.88], EntitySquid['Squid'/22239, l='MpServer', x=85.63, y=59.14, z=76.48], EntitySquid['Squid'/22241, l='MpServer', x=85.40, y=58.40, z=77.47], EntityFallingBlock['Falling Block'/1261, l='MpServer', x=135.50, y=24.07, z=126.50], EntityBat['Bat'/28405, l='MpServer', x=4.49, y=40.29, z=112.51]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.func_72914_a(WorldClient.java:420)
+	at net.minecraft.client.Minecraft.func_71396_d(Minecraft.java:2741)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:427)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 429461216 bytes (409 MB) / 771751936 bytes (736 MB) up to 2147483648 bytes (2048 MB)
+	JVM Flags: 8 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx2G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP 9.42 Powered by Forge 14.23.5.2859 8 mods loaded, 8 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID                | Version      | Source                             | Signature                                |
+	|:------ |:----------------- |:------------ |:---------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft         | 1.12.2       | minecraft.jar                      | None                                     |
+	| LCHIJA | mcp               | 9.42         | minecraft.jar                      | None                                     |
+	| LCHIJA | FML               | 8.0.99.99    | forge-1.12.2-14.23.5.2859.jar      | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | forge             | 14.23.5.2859 | forge-1.12.2-14.23.5.2859.jar      | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | creativecoredummy | 1.0.0        | minecraft.jar                      | None                                     |
+	| LCHIJA | littletilescore   | 1.0.0        | minecraft.jar                      | None                                     |
+	| LCHIJA | creativecore      | 1.10.0       | CreativeCore_v1.10.64_mc1.12.2.jar | None                                     |
+	| LCHIJA | littletiles       | 1.5.0        | LittleTiles_v1.5.57_mc1.12.2.jar   | None                                     |
+
+	Loaded coremods (and transformers): 
+CreativePatchingLoader (CreativeCore_v1.10.64_mc1.12.2.jar)
+  
+LittlePatchingLoader (LittleTiles_v1.5.57_mc1.12.2.jar)
+  com.creativemd.littletiles.LittleTilesTransformer
+	GL info: ' Vendor: 'Intel' Version: '4.6.0 - Build 27.20.100.9624' Renderer: 'Intel(R) Iris(R) Xe Graphics'
+	Launched Version: 1.12.2-forge-14.23.5.2859
+	LWJGL: 2.9.4
+	OpenGL: Intel(R) Iris(R) Xe Graphics GL version 4.6.0 - Build 27.20.100.9624, Intel
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: vanilla, programer_art
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 8x 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
